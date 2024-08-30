@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <meta charset="UTF-8"/>
     <link href="banco.css" rel="stylesheet" />
     <script src="transacciones.js"></script>
     <script src="utilitarios.js"></script>
@@ -59,26 +60,38 @@
             <div class="superior">
                 <div class="titulo">TRANSACCIONES</div>
                 <div class="contenedorTexto">
-                    <div class="etiquetaTexto">CAMPO 1</div>
+                    <div class="etiquetaTexto">Buscar Cliente:</div>
                     <div class="cajaTexto">
-                        <input type="text" class="caja" />
+                        <input type="text" class="caja" id="cajitaBuscarcuenta" />
                     </div>
                 </div>
                 <div class="contenedorAcciones">
-                    <input type="button" value="BUSCAR" />
+                    <input type="button" value="BUSCAR" onclick="ejecutarBusqueda()" />
                 </div>
+                <div class="titulo" id="cuentaEncontrada"></div>
                 <div class="contenedorTexto">
-                    <div class="etiquetaTexto">CAMPO 2</div>
-                    <div class="cajaTexto">
-                        <input type="text" class="caja" />
+                    <div class="etiquetaTexto">Cantidad:</div>$
+                    <div class="cajaTexto" >
+                        <input type="text" class="caja" id="monto" />
                     </div>
                 </div>
                 <div class="contenedorAcciones">
-                    <input type="button" value="DEPOSITAR" />
-                    <input type="button" value="RETIRAR" />
-                    
+                    <input type="button" value="DEPOSITAR" onclick="ejecutarDeposito()" id="deposito"/>
+                    <input type="button" value="RETIRAR" onclick="ejecutarRetiro()" id="retiro"/>
+
                 </div>
-              
+                <div>
+                    <h3></h3>
+                </div>
+                <div class="titulo">
+                    <div id="cuentaEncontradanC" class="etiquetaTexto"></div>
+                    <div id="cuentaEncontradaci" class="etiquetaTexto"></div>
+                    <div id="cuentaEncontradanm" class="etiquetaTexto"></div>
+                    <div id="cuentaEncontradas" class="etiquetaTexto"></div>
+
+
+                </div>
+
             </div>
         </div>
         <div class="contenido" id="divMovimientos">
