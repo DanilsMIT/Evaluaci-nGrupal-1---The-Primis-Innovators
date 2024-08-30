@@ -28,30 +28,35 @@
             <div class="superior">
                 <div class="titulo">CUENTAS</div>
                 <div class="contenedorTexto">
-                    <div class="etiquetaTexto">CAMPO 1</div>
+                    <div class="etiquetaTexto">CÉDULA</div>
                     <div class="cajaTexto">
-                        <input type="text" class="caja" />
+                        <input type="text" id="cmpCedula" class="caja" />
                     </div>
                 </div>
                 <div class="contenedorTexto">
-                    <div class="etiquetaTexto">CAMPO 2</div>
+                    <div class="etiquetaTexto">NOMBRE</div>
                     <div class="cajaTexto">
-                        <input type="text" class="caja" />
+                        <input type="text" id="cmpNombre" class="caja" />
                     </div>
                 </div>
                 <div class="contenedorTexto">
-                    <div class="etiquetaTexto">CAMPO 3</div>
+                    <div class="etiquetaTexto">APELLIDO</div>
                     <div class="cajaTexto">
-                        <input type="text" class="caja" />
+                        <input type="text" id="cmpApellido" class="caja" />
+                    </div>
+                </div>
+                <div class="contenedorTexto">
+                    <div class="etiquetaTexto">NÚMERO DE CUENTA</div>
+                    <div class="cajaTexto">
+                        <input type="text" id="cmpNumeroCuenta" class="caja" />
                     </div>
                 </div>
                 <div class="contenedorAcciones">
-                    <input type="button" value="GUARDAR" />
+                    <input type="button" value="GUARDAR" onclick="agregar();"/>
                 </div>
             </div>
 
-            <div class="inferior">
-                TABLA
+            <div class="inferior" id="tabla">
             </div>
 
         </div>
@@ -76,13 +81,13 @@
                 <div class="contenedorAcciones">
                     <input type="button" value="DEPOSITAR" />
                     <input type="button" value="RETIRAR" />
-                    
+
                 </div>
-              
+
             </div>
         </div>
         <div class="contenido" id="divMovimientos">
-          
+
             <div class="inferior">
                 <div class="titulo">MOVIMIENTOS</div>
                 <div class="contenedorTexto">
@@ -92,7 +97,7 @@
                     </div>
                 </div>
                 <div class="contenedorAcciones">
-                    <input type="button" value="BUSCAR" />                    
+                    <input type="button" value="BUSCAR" />
                 </div>
                 <div id="tablaMovimientos">
                     TABLA
