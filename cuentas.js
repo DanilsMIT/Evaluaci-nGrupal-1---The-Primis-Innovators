@@ -74,15 +74,53 @@ agregar = function () {
     let nombre = recuperarTexto("cmpNombre");
     let apellido = recuperarTexto("cmpApellido");
     let nCuenta = recuperarTexto("cmpNumeroCuenta");
-    //Crea un objeto cuenta y agrega los atributos con los valores de las cajas respectivas
-    let cuenta = {};
-    cuenta.cedula = cedula;
-    cuenta.nombre = nombre;
-    cuenta.apellido = apellido;
-    cuenta.numeroCuenta = nCuenta;
-    cuenta.saldo = 0.0;
-    //Invoca a agregarCuenta
-    agregarCuenta(cuenta);
-    //Invoca a mostrarCuentas
-    mostrarCuentas();
+
+    let verificacionCedula = false;
+    let verificacionNombre = false;
+    let verificacionApellido = false;
+    let verificacionCuenta = false;
+
+    if (cedula !== null && cedula !== undefined && cedula !== "" && cedula.length == 10 && !isNaN(cedula)) {
+        verificacionCedula = true;
+        mostrarTexto("errorCedula", "");
+    } else {
+        mostrarTexto("errorCedula", "La cédula debe tener 10 dígitos");
+    }
+
+    let encontrarDigitoNombre = esDigito(nombre);
+    if (nombre !== null && nombre !== undefined && nombre != "" && nombre.length >= 3 && esMayuscula(nombre) && encontrarDigitoNombre == false) {
+        verificacionNombre = true;
+        mostrarTexto("errorNombre", "");
+    } else {
+        mostrarTexto("errorNombre", "Debe contener 3 o más letras, la primera en mayúscula, no se aceptan números");
+    }
+
+    let encontrarDigitoApellido = esDigito(apellido);
+    if (apellido !== null && apellido !== undefined && apellido != "" && apellido.length >= 3 && esMayuscula(apellido) && encontrarDigitoApellido == false) {
+        verificacionApellido = true;
+        mostrarTexto("errorApellido", "");
+    } else {
+        mostrarTexto("errorApellido", "Debe contener 3 o más letras, la primera en mayúscula, no se aceptan números");
+    }
+
+    if (nCuenta !== null && nCuenta !== undefined && nCuenta !== "" && nCuenta.length == 8 && !isNaN(nCuenta)) {
+        verificacionCuenta = true;
+        mostrarTexto("errorNCuenta", "");
+    } else {
+        mostrarTexto("errorNCuenta", "El número de cuenta debe tener 8 dígitos");
+    }
+
+    if (verificacionCedula && verificacionNombre && verificacionApellido && verificacionCuenta) {
+        //Crea un objeto cuenta y agrega los atributos con los valores de las cajas respectivas
+        let cuenta = {};
+        cuenta.cedula = cedula;
+        cuenta.nombre = nombre;
+        cuenta.apellido = apellido;
+        cuenta.numeroCuenta = nCuenta;
+        cuenta.saldo = 0.0;
+        //Invoca a agregarCuenta
+        agregarCuenta(cuenta);
+        //Invoca a mostrarCuentas
+        mostrarCuentas();
+    }
 }
