@@ -8,6 +8,9 @@ cargar = function () {
     ocultarComponente("divCuentas");
     ocultarComponente("divMovimientos");
 
+    deshabilitarComponente("deposito")
+    deshabilitarComponente("retiro")
+
 }
 
 buscarCuenta = function (numeroCuenta) {
@@ -34,6 +37,8 @@ ejecutarBusqueda = function () {
     if (cliente == null) {
         alert("Cuenta inexistente")
         mostrarTexto("cuentaEncontrada", "La busqueda va apartir del número de cuenta")
+        deshabilitarComponente("deposito")
+        deshabilitarComponente("retiro")
     } else {
         mostrarTexto("cuentaEncontrada", "")
         mostrarTexto("cuentaEncontradanC", "No.Cuenta: " + cliente.numeroCuenta)
@@ -41,6 +46,8 @@ ejecutarBusqueda = function () {
         mostrarTexto("cuentaEncontradanm", "Señor/a: " + cliente.nombre + " " + cliente.apellido)
         mostrarTexto("cuentaEncontradas", "Saldo: " + cliente.saldo)
 
+        habilitarComponente("deposito")
+        habilitarComponente("retiro")
 
     }
 
@@ -76,7 +83,7 @@ retirar = function (numeroCuenta, monto) {
     } else {
         cuentaAfectada.saldo -= monto
         alert("Retiro exitoso")
-        
+
     }
 }
 
