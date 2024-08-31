@@ -231,6 +231,7 @@ ejecutarDeposito = function () {
     depositar(nAccount, nCantidad)
     let actualizarSaldoShow = buscarCuenta(nAccount);
     mostrarTexto("cuentaEncontradas", "Saldo: " + actualizarSaldoShow.saldo)
+    mostrarCuentas();
 }
 
 
@@ -248,6 +249,7 @@ retirar = function (numeroCuenta, monto) {
     depositoMovimiento.monto=monto
     depositoMovimiento.tipo="D"
     movimientos.push(depositoMovimiento)
+    mostrarCuentas();
     }
 }
 

@@ -20,44 +20,44 @@
                 <input type="button" value="MOVIMIENTOS" class="boton" onclick="Movimientos()" />
             </div>
             <div class="contenedorInfoGrupo">
-                <div>LEYTHON HIDALGO</div>
-                <div>DANILO MELGAREJO</div>
-                <div>ÁNGEL DIDER</div>
+                <div>Leython Hidalgo</div>
+                <div>Danilo Melgarejo</div>
+                <div>Ángel Didier</div>
             </div>
         </div>
         <div class="contenido" id="divCuentas">
             <div class="superior">
                 <div class="titulo">CUENTAS</div>
                 <div class="contenedorTexto">
-                    <div class="etiquetaTexto">CÉDULA</div>
+                    <div class="etiquetaTexto">Cédula</div>
                     <div class="cajaTexto">
                         <input type="text" id="cmpCedula" class="caja" />
-                        <div id="errorCedula"></div>
                     </div>
                 </div>
+                <div class="validarCuenta" id="errorCedula"></div>
                 <div class="contenedorTexto">
-                    <div class="etiquetaTexto">NOMBRE</div>
+                    <div class="etiquetaTexto">Nombre</div>
                     <div class="cajaTexto">
                         <input type="text" id="cmpNombre" class="caja" />
-                        <div id="errorNombre"></div>
                     </div>
                 </div>
+                <div class="validarCuenta" id="errorNombre"></div>
                 <div class="contenedorTexto">
-                    <div class="etiquetaTexto">APELLIDO</div>
+                    <div class="etiquetaTexto">Apellido</div>
                     <div class="cajaTexto">
                         <input type="text" id="cmpApellido" class="caja" />
-                        <div id="errorApellido"></div>
                     </div>
                 </div>
+                <div class="validarCuenta" id="errorApellido"></div>
                 <div class="contenedorTexto">
-                    <div class="etiquetaTexto">NÚMERO DE CUENTA</div>
+                    <div class="etiquetaTexto">Número de Cuenta</div>
                     <div class="cajaTexto">
                         <input type="text" id="cmpNumeroCuenta" class="caja" />
-                        <div id="errorNCuenta"></div>
                     </div>
                 </div>
+                <div class="validarCuenta" id="errorNCuenta"></div>
                 <div class="contenedorAcciones">
-                    <input type="button" value="GUARDAR" onclick="agregar();" />
+                    <input type="button" class="btnPrincipales" value="GUARDAR" onclick="agregar();" />
                 </div>
             </div>
 
@@ -76,30 +76,29 @@
                     </div>
                 </div>
                 <div class="contenedorAcciones">
-                    <input type="button" value="BUSCAR" onclick="ejecutarBusqueda()" />
+                    <input type="button" class="btnPrincipales" value="BUSCAR" onclick="ejecutarBusqueda()" />
                 </div>
-                <div class="titulo" id="cuentaEncontrada"></div>
+                <div class="validarCuenta" id="cuentaEncontrada"></div>
                 <div class="contenedorTexto">
-                    <div class="etiquetaTexto">Cantidad:</div>$
+                    <div class="etiquetaTexto">Cantidad: $</div>
                     <div class="cajaTexto">
                         <input type="text" class="caja" id="monto" />
                     </div>
                 </div>
                 <div class="contenedorAcciones">
-                    <input type="button" value="DEPOSITAR" onclick="ejecutarDeposito()" id="deposito" />
-                    <input type="button" value="RETIRAR" onclick="ejecutarRetiro()" id="retiro" />
-
+                    <input type="button" class="btnPrincipales" value="DEPOSITAR" onclick="ejecutarDeposito()"
+                        id="deposito" />
+                    <input type="button" class="btnPrincipales" value="RETIRAR" onclick="ejecutarRetiro()"
+                        id="retiro" />
                 </div>
                 <div>
                     <h3></h3>
                 </div>
-                <div class="titulo">
+                <div class="cuentaTransaccion">
                     <div id="cuentaEncontradanC" class="etiquetaTexto"></div>
                     <div id="cuentaEncontradaci" class="etiquetaTexto"></div>
                     <div id="cuentaEncontradanm" class="etiquetaTexto"></div>
                     <div id="cuentaEncontradas" class="etiquetaTexto"></div>
-
-
                 </div>
 
             </div>
@@ -119,11 +118,11 @@
 
                 </div>
                 <div class="contenedorAcciones">
-                    <input type="button" value="BUSCAR" onclick="ejecutarMovimiento()" />
+                    <input type="button" class="btnPrincipales" value="BUSCAR" onclick="ejecutarMovimiento()" />
                 </div>
                 <h2></h2>
                 <div class="contenedorAcciones">
-                    <div id="tablaMovimientos">
+                    <div class="inferior" id="tablaMovimientos">
                     </div>
                 </div>
             </div>
