@@ -52,7 +52,3 @@ mostrarMovimientos=function(misMovimientos){
     contenidoTabla += "</table>"
     cmp.innerHTML = contenidoTabla
 }
-
-
-
-
