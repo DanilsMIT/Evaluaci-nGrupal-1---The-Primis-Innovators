@@ -19,6 +19,14 @@ filtrarMovimientos=function(numeroCuenta){
     //En cada iteración, verifica si el numero de cuenta del movimiento es igual al que recibe como parametro
     //En caso de serlo, agrega la cuenta al arreglo movimientosCuenta
     //Invoca a mostrarMovimientos, pasándole como parámetro movimientosCuenta
+    let movimientoIterado
+    for(let i=0;i<movimientos.length;i++){
+        movimientoIterado = movimientos[i]
+        if(numeroCuenta==movimientoIterado.numeroCuenta){
+            movimientosCuenta.push(movimientoIterado)
+        }
+    }
+    mostrarMovimientos(movimientosCuenta)
 }
 
 /*
@@ -30,6 +38,19 @@ mostrarMovimientos=function(misMovimientos){
     //Si ya pinta correctamente la tabla, hacer el siguiente cambio:
     //Si el tipo es D(DEBITO), mostrar el monto en negativo (multiplicar por -1)
     //Si el tipo es C(CREDITO), mostrar el monto en positivo (tal como está guardado)
+    let cmp = document.getElementById("tablaMovimientos")
+    let contenidoTabla = "<table><tr>"+"<th>NUMERO CUENTA</th>"+"<th>MONTO</th>"+"<th>TIPO</th>"+"</tr>"
+    let movimientoIterado
+    for(let i = 0;i<misMovimientos.length;i++){
+        movimientoIterado = misMovimientos[i]
+        if(movimientoIterado.tipo=="D"){
+            let monto_debito = movimientoIterado.monto * -1
+            movimientoIterado.monto = monto_debito
+        }
+        contenidoTabla +="<tr><td>"+movimientoIterado.numeroCuenta+"</td>"+"<td>"+movimientoIterado.monto+"</td>"+"<td>"+movimientoIterado.tipo+"</td></tr>"
+    }
+    contenidoTabla += "</table>"
+    cmp.innerHTML = contenidoTabla
 }
 
 
